@@ -6,6 +6,7 @@ import { selectors as clusterSelector } from "app/services/cluster";
 import { Primitive } from "app/services/cluster/types";
 import { tabRoutes, join } from "app/common/utils";
 import {
+  Badge,
   UrlTabs,
   DetailLayout,
   ResourceDetailCaption,
@@ -40,6 +41,7 @@ const PrimitivePage = ({ primitive, urlPrefix, onClose }: {
       caption={(
         <ResourceDetailCaption
           resourceId={primitive.id}
+          badge={<Badge color="#bbbbbb">P</Badge>}
           type={primitive.type}
         />
       )}

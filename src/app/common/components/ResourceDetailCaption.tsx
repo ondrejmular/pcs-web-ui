@@ -1,12 +1,14 @@
 import React from "react";
 
-const ResourceDetailCaption = ({ resourceId, type }: {
+const ResourceDetailCaption = ({ resourceId, badge, type = "" }: {
   resourceId: string;
-  type: string;
+  badge: JSX.Element;
+  type?: string;
 }) => (
   <>
-    <strong>{`${resourceId} `}</strong>
-    <span>{`(${type})`}</span>
+    {badge}
+    <strong>{` ${resourceId} `}</strong>
+    {type && <span>{`(${type})`}</span>}
   </>
 );
 

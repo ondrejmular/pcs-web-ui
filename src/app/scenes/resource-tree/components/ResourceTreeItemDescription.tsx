@@ -6,7 +6,7 @@ import {
 } from "@patternfly/react-core";
 import { ArrowCircleRightIcon } from "@patternfly/react-icons";
 
-import { StatusSign } from "app/common/components";
+import { StatusSign, Badge } from "app/common/components";
 import { toLabel } from "app/common/utils";
 import { ResourceTreeItem } from "app/services/cluster/types";
 
@@ -30,6 +30,16 @@ const ResourceTreeItemDescription = ({
       <DataListItemCells
         dataListCells={[
           <DataListCell key={resourceTreeItem.id}>
+            {resourceTreeItem.itemType === "group" && (
+              <Badge color="#754aeb">G</Badge>
+            )}
+            {resourceTreeItem.itemType === "clone" && (
+              <Badge color="#357728">C</Badge>
+            )}
+            {resourceTreeItem.itemType === "primitive" && (
+              <Badge color="#bbbbbb">P</Badge>
+            )}
+            {" "}
             <Link to={detailUrl}>
               <strong>{resourceTreeItem.id}</strong>
             </Link>

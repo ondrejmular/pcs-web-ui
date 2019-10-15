@@ -113,11 +113,13 @@ const clusterOk = clusterName => cluster(clusterName, "ok", {
 
 const resourceTree = cluster("resourceTree", "ok", {
   resource_list: [
-    resource("A", {
+    resource("our-webserver", {
       type: "apache",
       error_list: [
         {
-          message: "Failed to monitor A on Mon Oct 14 14:00:07 CEST 2019",
+          message:
+            "Failed to monitor our-webserver on Mon Oct 14 14:00:07 CEST 2019"
+          ,
         },
       ],
       instance_attr: [

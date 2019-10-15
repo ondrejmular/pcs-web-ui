@@ -4,6 +4,7 @@ import { useRouteMatch } from "react-router";
 import { Group } from "app/services/cluster/types";
 import { tabRoutes, join } from "app/common/utils";
 import {
+  Badge,
   UrlTabs,
   DetailLayout,
   ResourceDetailCaption,
@@ -24,7 +25,12 @@ const GroupPage = ({ group, urlPrefix, onClose }: {
   return (
     <DetailLayout
       onClose={onClose}
-      caption={<ResourceDetailCaption resourceId={group.id} type="group" />}
+      caption={(
+        <ResourceDetailCaption
+          resourceId={group.id}
+          badge={<Badge color="#754aeb">G</Badge>}
+        />
+      )}
       tabs={<UrlTabs tabSettingsMap={urlMap} currentTab={tab} />}
     >
       {tab === "Detail" && (

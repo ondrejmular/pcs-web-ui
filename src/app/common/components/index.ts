@@ -10,10 +10,12 @@ import Breadcrumbs from "./Breadcrumbs";
 import UrlTabs from "./UrlTabs";
 import DetailLayout from "./DetailLayout";
 import ResourceDetailCaption from "./ResourceDetailCaption";
+import Badge from "./Badge";
 
 export {
   BackgroundImage,
   BackgroundImageSources,
+  Badge,
   Breadcrumbs,
   DetailLayout,
   NoItemCase,

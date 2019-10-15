@@ -4,6 +4,7 @@ import { useRouteMatch } from "react-router";
 import { Clone } from "app/services/cluster/types";
 import { tabRoutes, join } from "app/common/utils";
 import {
+  Badge,
   UrlTabs,
   DetailLayout,
   ResourceDetailCaption,
@@ -24,7 +25,12 @@ const ResourceDetailGroup = ({ clone, urlPrefix, onClose }: {
   return (
     <DetailLayout
       onClose={onClose}
-      caption={<ResourceDetailCaption resourceId={clone.id} type="clone" />}
+      caption={(
+        <ResourceDetailCaption
+          badge={<Badge color="#357728">C</Badge>}
+          resourceId={clone.id}
+        />
+      )}
       tabs={<UrlTabs tabSettingsMap={urlMap} currentTab={tab} />}
     >
       {tab === "Detail" && (
