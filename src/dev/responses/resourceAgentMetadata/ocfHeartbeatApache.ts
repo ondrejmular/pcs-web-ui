@@ -13,7 +13,7 @@ export const ocfHeartbeatApache: ResourceAgentMetadata = {
       shortdesc: "configuration file path",
       type: "string",
       default: "/etc/httpd/conf/httpd.conf",
-      required: false,
+      required: true,
       advanced: false,
       deprecated: false,
       deprecated_by: [],

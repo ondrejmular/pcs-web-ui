@@ -11,7 +11,7 @@ import {
   stonith,
 } from "./tools";
 
-export const resourceTree: Cluster = cluster("resourceTree", "ok", {
+export const resourceTree: Cluster = cluster("cluster-name", "ok", {
   node_list: [
     node("1", {
       services: {
