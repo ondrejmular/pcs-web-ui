@@ -2,12 +2,14 @@ import { api } from "app/backend";
 
 type Response = api.types.lib.Response;
 
-export const success: Response = {
+export const success = (
+  reportList: Response["report_list"] = [],
+): Response => ({
   status: "success",
   status_msg: null,
-  report_list: [],
+  report_list: reportList,
   data: null,
-};
+});
 
 export const missingKey: Response = {
   status: "input_error",

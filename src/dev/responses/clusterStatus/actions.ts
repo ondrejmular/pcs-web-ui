@@ -34,15 +34,7 @@ const buildNodeList = (
   );
 };
 
-const nodeNames = [
-  "ok",
-  "fail",
-  "permission",
-  "invalid-json",
-  "missing-key",
-  "unknown-cmd",
-  "error",
-];
+const nodeNames = ["node-1", "node-2", "node-3", "node-4", "node-5"];
 
 export const actions = cluster("actions", "ok", {
   node_list: buildNodeList(nodeNames),

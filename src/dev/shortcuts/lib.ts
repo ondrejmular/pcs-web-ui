@@ -64,10 +64,10 @@ const getLibResponses = (res: Response): Record<string, () => void> => ({
     );
   },
   success: () => {
-    res.json(response.lib.success);
+    res.json(response.lib.success());
   },
   ok: () => {
-    res.json(response.lib.success);
+    res.json(response.lib.success());
   },
 });
 
@@ -75,13 +75,19 @@ export const libStd = ({
   code,
   res,
   errors = {},
+  success = {},
 }: {
   code: string;
   res: Response;
   errors?: Record<string, api.types.lib.Response["report_list"]>;
+  success?: Record<string, api.types.lib.Response["report_list"]>;
 }) => {
   if (code in errors) {
     res.json(response.lib.error(errors[code]));
+    return;
+  }
+  if (code in success) {
+    res.json(response.lib.success(success[code]));
     return;
   }
   const stdResponses = getLibResponses(res);

@@ -18,6 +18,8 @@ app.libCluster("resource-create", (req, res) => {
           context: null,
         },
       ],
+    },
+    success: {
       webserver: [
         {
           severity: { level: "INFO", force_code: null },
@@ -33,6 +35,15 @@ app.libCluster("resource-create", (req, res) => {
           message: {
             code: "DEFAULT_INFO2",
             message: "Other information message from backend",
+            payload: { id: "exist" },
+          },
+          context: null,
+        },
+        {
+          severity: { level: "WARNING", force_code: null },
+          message: {
+            code: "DEFAULT_WARNING",
+            message: "Warning message from backend",
             payload: { id: "exist" },
           },
           context: null,
