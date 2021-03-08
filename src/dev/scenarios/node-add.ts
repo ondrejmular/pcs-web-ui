@@ -53,7 +53,8 @@ shortcut.checkAuthAgainstNodes();
 shortcut.authGuiAgainstNodes();
 
 app.sendKnownHosts((_req, res) => {
-  res.send("success");
+  // res.send("success");
+  res.status(404).send("error");
 });
 
 app.libCluster("cluster-add-nodes", (req, res) => {
